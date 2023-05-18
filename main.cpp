@@ -13,6 +13,14 @@ int main(int argc , char** argv)
     {
         std::ifstream infile(std::string{"test/"} + argv[i]);
 
+        if(!infile.is_open())
+        {
+            std::cerr << "Error has occurred while file is reading";
+            return -1;
+        }
+
+        std::cout << argv[i] << " named file is reading\n\n";
+
         std::unique_ptr<FlexLexer> lex = std::make_unique<yyFlexLexer>(infile , std::cerr);
 
         auto token = Start;
