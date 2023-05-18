@@ -33,14 +33,14 @@
 "return"        { return RETURN; }
 "True"          { return TRUE; }
 "False"         { return FALSE; }
-[0-9]+          { 
-                  identiferVal = std::make_unique<std::string>(yytext , yyleng);
-                  return NUM; 
-                }
 [a-zA-Z_][a-zA-Z0-9_]*  { 
                           identiferVal = std::make_unique<std::string>(yytext , yyleng);
                           return IDENTIFIER;
                         }
+[0-9]+          { 
+                  identiferVal = std::make_unique<std::string>(yytext , yyleng);
+                  return NUM; 
+                }
 "=="            { return EQ; }
 "!="            { return NEQ; }
 ">"             { return GT; }

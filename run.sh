@@ -2,5 +2,5 @@ cmake -S . -B build
 cmake --build build -j8
 clear
 cd build
-./miniPythonLexer
+./miniPythonLexer test.py $@
 cd ..
